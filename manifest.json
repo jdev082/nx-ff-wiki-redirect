@@ -10,8 +10,7 @@
       "gecko": {
         "id": "wiki-redirect@nix"
        }
-     }
-
+     },
     "content_scripts": [
       {
         "matches": ["*://*.nixos.wiki/*"],
