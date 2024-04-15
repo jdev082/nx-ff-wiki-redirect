@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "NXFF Wiki Redirect",
+    "version": "1.0",
+    "description": "Redirects to the new NixOS wiki when the old one is opened.",
+    "icons": {
+      "48": "icon.png"
+    },     
+    "content_scripts": [
+      {
+        "matches": ["*://*.nixos.wiki/*"],
+        "js": ["script.js"]
+      }
+    ]   
+  }
