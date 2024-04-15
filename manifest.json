@@ -5,7 +5,13 @@
     "description": "Redirects to the new NixOS wiki when the old one is opened.",
     "icons": {
       "48": "icon.png"
-    },     
+    },
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "wiki-redirect@nix"
+       }
+     }
+
     "content_scripts": [
       {
         "matches": ["*://*.nixos.wiki/*"],
