@@ -39,7 +39,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "release.xpi"
+          asset_path: "./release.xpi"
           asset_name: "release.xpi"
           asset_content_type: application/x-xpinstall
 
