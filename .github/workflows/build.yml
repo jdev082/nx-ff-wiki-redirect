@@ -19,7 +19,8 @@ jobs:
           filename: "release.xpi"
           
       - name: Short Hash
-        run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+        id: short
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: "Release"
         uses: actions/create-release@v1
@@ -27,8 +28,8 @@ jobs:
         with:
           draft: false
           prerelease: false
-          release_name: ${SHORT_SHA}
-          tag_name: ${{ SHORT_SHA }}
+          release_name: ${{ steps.short.outputs.sha_short }}
+          tag_name: ${{ steps.short.outputs.sha_short }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
