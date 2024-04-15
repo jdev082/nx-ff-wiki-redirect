@@ -17,6 +17,9 @@ jobs:
           cmd: build
           source: .
           filename: "release.xpi"
+          
+      - name: Short Hash
+        run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
 
       - name: "Release"
         uses: actions/create-release@v1
@@ -24,8 +27,8 @@ jobs:
         with:
           draft: false
           prerelease: false
-          release_name: ${{ github.sha }}
-          tag_name: ${{ github.sha }}
+          release_name: ${SHORT_SHA}
+          tag_name: ${SHORT_SHA}
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
