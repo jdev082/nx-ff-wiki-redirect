@@ -28,7 +28,7 @@ jobs:
           draft: false
           prerelease: false
           release_name: ${SHORT_SHA}
-          tag_name: ${SHORT_SHA}
+          tag_name: ${{ SHORT_SHA }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
