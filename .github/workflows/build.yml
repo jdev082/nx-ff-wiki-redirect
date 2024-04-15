@@ -24,8 +24,8 @@ jobs:
         with:
           draft: false
           prerelease: false
-          release_name: "RELEASE"
-          tag_name: "release"
+          release_name: ${{ github.sha }}
+          tag_name: ${{ github.sha }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
